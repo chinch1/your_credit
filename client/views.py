@@ -11,12 +11,6 @@ def home(request):
     return render(request, 'client/home.html')
 
 
-def showClient(request, pk):
-    client = Client.objects.get(id=pk)
-    context = {'client': client}
-    return render(request, 'client/client_show.html', context)
-
-
 def listClients(request):
     clients = Client.objects.all()
     context = {'clients': clients}
