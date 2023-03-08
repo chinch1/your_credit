@@ -43,11 +43,11 @@ The need arises to develop a web system to automate the needs of the company, op
 ## Additional Requirements
 
 - [x] Dockerfile and docker-compose to deploy with Docker
-- [] Unit Test Files
+- [ ] Unit Test Files
 - [x] Detailed Documentation
-- [] Login to enter the views
+- [ ] Login to enter the views
 - [x] Use of Environment Variables
-- [] Send an Email to the Customer when registering a credit
+- [ ] Send an Email to the Customer when registering a credit
 
 
 ## System Documentation
@@ -60,11 +60,6 @@ or
 
 [https://your-credit.herokuapp.com/redocs](https://your-credit.herokuapp.com/redocs)
 
-## Running the deploy system
-
-The system is deployed in Heroku, so you can access it at:
-
-[your-credit.herokuapp.com/client](your-credit.herokuapp.com/client)
 
 ## Running the system locally
 
@@ -76,13 +71,25 @@ Then, you must clone the repository:
 git clone
 ```
 
-First, install the dependencies of the project:
+First of all you must create a virtual environment:
+
+```bash
+python3 -m venv your_env
+```
+
+Then, you must activate the virtual environment:
+
+```bash
+source your_env/bin/activate
+```
+
+In the project root, install the dependencies of the project:
 
 ```bash
 pip3 install -r requirements.txt
 ``` 
 
-Then, in the project root you must run the following command to build the database container:
+For building the database, you must run the following command:
 
 ```bash
 docker-compose up
@@ -103,4 +110,10 @@ python3 manage.py runserver
 
 Finally, you can access the system at:
 
-[http://localhost:8000/client](http://localhost:8000/client)
+[http://localhost:8000/client/list](http://localhost:8000/client/list)
+
+## Running the deployed system
+
+The whole system is deployed in Heroku, so you can access it at:
+
+[https://your-credit.herokuapp.com/client/list/](https://your-credit.herokuapp.com/client/list/)
