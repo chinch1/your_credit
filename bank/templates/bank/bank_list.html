@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column;">
+  <table class='styled-table'>
+
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Adress</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bank in banks %}
+      <tr class="active-row">
+        <td>{{ bank.id }}</td>
+        <td>{{ bank.name }}</td>
+        <td>{{ bank.address }}</td>
+        <td>{{ bank.type }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button style="background-color: #009879;
+    border: none;
+    color: white;
+    margin: auto;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;" onclick="window.location.href='/bank/create'">
+    Create
+  </button>
+</div>
+{% endblock %}

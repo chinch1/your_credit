@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column;">
+  <table class='styled-table'>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Birthday</th>
+        <th>Age</th>
+        <th>Nationality</th>
+        <th>Phone Number</th>
+        <th>Type</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for client in clients %}
+      <tr>
+        <td>{{ client.id }}</td>
+        <td>{{ client.full_name }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.birthday }}</td>
+        <td>{{ client.age }}</td>
+        <td>{{ client.nationality }}</td>
+        <td>{{ client.phone_number }}</td>
+        <td>{{ client.type }}</td>
+        <td>
+          <div style="display: flex; flex-direction: row; gap: 5px;">
+            <a class="btn btn-primary" style="
+                font-weight: bold;
+                " href="/client/update/{{client.id}}">
+              Update
+            </a>
+            <a class="btn" style="
+                background-color: red; 
+                color: antiquewhite;
+                font-weight: bold;
+                " href="/client/delete/{{client.id}}">
+              Delete
+            </a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button style="background-color: #009879;
+    border: none;
+    color: white;
+    margin: auto;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;" onclick="window.location.href='/client/create'">
+    Create
+  </button>
+</div>
+
+
+{% endblock %}

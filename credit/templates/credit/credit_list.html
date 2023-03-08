@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column;">
+  <table class='styled-table'>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Client</th>
+        <th>Bank</th>
+        <th>Description</th>
+        <th>Minimal Amount</th>
+        <th>Maximal Amount</th>
+        <th>Loam Term</th>
+        <th>Type</th>
+        <th>Register Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for credit in credits %}
+      <tr>
+        <td>{{ credit.id }}</td>
+        <td>{{ credit.client }}</td>
+        <td>{{ credit.bank }}</td>
+        <td>{{ credit.description }}</td>
+        <td>${{ credit.minimal_amount }}</td>
+        <td>${{ credit.maximal_amount }}</td>
+        <td>{{ credit.loam_term }} months</td>
+        <td>{{ credit.type }}</td>
+        <td>{{ credit.register_date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button style="background-color: #009879;
+    border: none;
+    color: white;
+    margin: auto;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;" onclick="window.location.href='/credit/create'">
+    Create
+  </button>
+</div>
+
+
+{% endblock %}
