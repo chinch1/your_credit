@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'your_credit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv('DB_PRODUCTION_NAME'),
+        'USER': os.getenv('DB_PRODUCTION_USER'),
+        'PASSWORD': os.getenv('DB_PRODUCTION_PASSWORD'),
+        'HOST': os.getenv('DB_PRODUCTION_HOST'),
+        'PORT': os.getenv('DB_PRODUCTION_PORT'),
     }
 }
 

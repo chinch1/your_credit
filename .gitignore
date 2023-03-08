@@ -1,5 +1,4 @@
 .vscode
-.env
 requests
 postgres_data
 */__pycache__

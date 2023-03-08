@@ -2,6 +2,7 @@ version: "3"
 
 services:
   postgres:
+    env_file: .env
     container_name: your-credit-postgres
     image: postgres
     restart: always
