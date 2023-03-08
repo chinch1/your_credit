@@ -1,4 +1,4 @@
-# Your Credit Aoo
+# Your Credit App
 
 Your Credit is a company that has the support of a financial institution in the country, which is focused on providing loans to a defined sector of the population, consisting of natural persons linked to the military, police, navy and other authorized forces.
 
