@@ -1,4 +1,6 @@
 .vscode
+.env
+requests
 postgres_data
 */__pycache__
 */*/__pycache__
